@@ -1,0 +1,12 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http/';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FirstReportService {
+
+  constructor( private http: HttpClient) {
+    console.log('Testing first service');
+   }
+  }
