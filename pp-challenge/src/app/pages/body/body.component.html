@@ -1,2 +1,22 @@
-<button type="button" class="btn btn-primary">Generate 1° Report</button>
+<button (click)="generateReportButton()" type="button" class="btn btn-primary">Generate 1° Report</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">N°</th>
+        <th scope="col">Number</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">First Position</th>
+        <th scope="col">Last Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of service.info.data; let i = index; let first = first; let last = last">
+        <td>{{i}}</td>
+        <td [style.backgroundColor]="data >= 2 ? 'green' :'yellow'">{{data}}</td>
+        <td>In progress...</td>
+        <td>{{first}}</td>
+        <td>{{last}}</td>
+      </tr>
+    </tbody>
+  </table>
 <button type="button" class="btn btn-success">Generate 2° Report</button>
